@@ -1,6 +1,6 @@
 def convert_hours_to_seconds(hours):
     # Convert hours to seconds
-    seconds = hours * 60 * 60
+    seconds = hours * 3600
     return seconds
 
 # Number of hours
