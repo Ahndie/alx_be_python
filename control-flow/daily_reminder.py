@@ -12,7 +12,7 @@ for i in range(3):
     print("\nReminder #", i + 1)
 
     # Provide task details based on time sensitivity
-    if time_sensitive == "yes":
+    if time_bound == "yes":
         time_reminder = "This task is time-sensitive! Don't delay."
     else:
         time_reminder = "This task is not time-sensitive, but still important."
