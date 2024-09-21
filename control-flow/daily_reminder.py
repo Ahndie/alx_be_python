@@ -1,11 +1,11 @@
 # Ask the user for their task
-task = input("Enter your task for the day: ")
+Task = input("Enter your task for the day: ")
 
 # Ask for the priority level
-priority = input("What is the priority level of the task? (high, medium, low): ").lower()
+Priority = input("What is the priority level of the task? (high, medium, low): ").lower()
 
 # Ask if the task is time-bound (Yes/No)
-time_bound = input("Is this task time-bound? (yes or no): ").lower()
+Time_bound = input("Is this task time-bound? (yes or no): ").lower()
 
 # Loop through the reminder 3 times to emphasize importance
 for i in range(3):
