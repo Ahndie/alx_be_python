@@ -1,21 +1,21 @@
 # Ask the user for their task
-Task = input("Enter your task for the day: ")
+Task = input("Enter your task: ")
 
-# Ask for the priority level
-Priority = input("What is the priority level of the task? (high, medium, low): ").lower()
+# Ask for the priority level (high, medium, low)
+Priority = input("Priority (high/medium/low): ").lower()
 
-# Ask if the task is time-bound (Yes/No)
-Time_bound = input("Is this task time-bound? (yes or no): ").lower()
+# Ask if the task is time-sensitive (yes/no)
+Time_bound = input("Is it time-bound? (yes/no): ").lower()
 
 # Loop through the reminder 3 times to emphasize importance
 for i in range(3):
     print("\nReminder #", i + 1)
 
-    # Provide task details based on time bound
-    if time_bound == "yes":
-        time_reminder = "This task is time-bound! Don't delay."
+    # Provide task details based on time sensitivity
+    if time_sensitive == "yes":
+        time_reminder = "This task is time-sensitive! Don't delay."
     else:
-        time_reminder = "This task is not time-bound, but still important."
+        time_reminder = "This task is not time-sensitive, but still important."
 
     # Provide customized reminder based on priority using match case
     match priority:
