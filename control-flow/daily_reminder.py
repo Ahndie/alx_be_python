@@ -9,7 +9,7 @@ Time_bound = input("Is it time-bound? (yes/no): ").lower()
 
 # Loop through the reminder 3 times to emphasize importance
 for i in range(3):
-    print("\nReminder #", i + 1)
+    print("\nReminder:")
 
     # Provide task details based on time sensitivity
     if time_bound == "yes":
