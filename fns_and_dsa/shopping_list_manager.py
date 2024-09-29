@@ -13,6 +13,7 @@ def main():
 
         if choice == '1':
             # Prompt for and add an item
+            item = input("Enter the item to add: ").strip()  # Exact string as required
             pass
         elif choice == '2':
             # Prompt for and remove an item
