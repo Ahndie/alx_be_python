@@ -1,13 +1,20 @@
-from arithmetic_operations import perform_operation
+# explore_datetime.py
 
-def main():
-    print("Arithmetic Operations")
-    num1 = float(input("Enter the first number: "))
-    num2 = float(input("Enter the second number: "))
-    operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+from datetime import datetime, timedelta  # Ensure correct imports
 
-    result = perform_operation(num1, num2, operation)
-    print(f"Result: {result}")
+# Get the current date and time
+current_time = datetime.now()
+print(f"Current date and time: {current_time}")
 
-if __name__ == "__main__":
-    main() 
+# Add 5 days to the current date
+future_time = current_time + timedelta(days=5)
+print(f"Date and time after 5 days: {future_time}")
+
+# Subtract 10 hours from the current time
+past_time = current_time - timedelta(hours=10)
+print(f"Date and time 10 hours ago: {past_time}")
+
+# Calculate the difference between two dates
+another_time = datetime(2024, 1, 1, 12, 0, 0)  # Fixed date and time
+time_difference = another_time - current_time
+print(f"Time difference between {another_time} and now: {time_difference}")
