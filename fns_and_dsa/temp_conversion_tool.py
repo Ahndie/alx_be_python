@@ -1,11 +1,11 @@
 # temp_conversion_tool.py
 
-# Conversion factors constants
-FAHRENHEIT_TO_CELSIUS_FACTOR = (5 / 9)
-CELSIUS_TO_FAHRENHEIT_FACTOR = (9 / 5)
-FAHRENHEIT_OFFSET = 32
+# Constants for conversion factors
+FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9  # Exact factor for Fahrenheit to Celsius
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5  # Exact factor for Celsius to Fahrenheit
+FAHRENHEIT_OFFSET = 32  # The offset value for Fahrenheit conversions
 
-def convert_to_celsius(fahrenheit):
+def celsius_to_fahrenheit(celsius):
     """
     Converts Celsius to Fahrenheit.
     
@@ -17,7 +17,7 @@ def convert_to_celsius(fahrenheit):
     """
     return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + FAHRENHEIT_OFFSET
 
-def convert_to_fahrenheit(celsius):
+def fahrenheit_to_celsius(fahrenheit):
     """
     Converts Fahrenheit to Celsius.
     
