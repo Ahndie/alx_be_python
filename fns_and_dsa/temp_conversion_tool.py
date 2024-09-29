@@ -35,5 +35,5 @@ if __name__ == "__main__":
     celsius_temp = 100
     fahrenheit_temp = 212
     
-    print(f"{celsius_temp}°C is {celsius_to_fahrenheit(celsius_temp):.2f}°F")
-    print(f"{fahrenheit_temp}°F is {fahrenheit_to_celsius(fahrenheit_temp):.2f}°C")
+    print(f"{celsius_temp}°C is {convert_to_celsius(celsius_temp):.2f}°F")
+    print(f"{fahrenheit_temp}°F is {convert_to_fahrenheit(fahrenheit_temp):.2f}°C")
