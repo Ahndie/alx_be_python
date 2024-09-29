@@ -1,20 +1,29 @@
-# explore_datetime.py
+# temp_conversion_tool.py
 
-from datetime import datetime, timedelta  # Ensure correct imports
+# Global variables (conversion factors)
+FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
 
-# Get the current date and time
-current_time = datetime.now()
-print(f"Current date and time: {current_time}")
+def convert_to_fahrenheit(celsius):
+    """
+    Converts Celsius temperature to Fahrenheit.
+    """
+    fahrenheit_temp = (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
+    return fahrenheit_temp
 
-# Add 5 days to the current date
-future_time = current_time + timedelta(days=5)
-print(f"Date and time after 5 days: {future_time}")
+def convert_to_celsius(fahrenheit):
+    """
+    Converts Fahrenheit temperature to Celsius.
+    """
+    celsius_temp = (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
+    return celsius_temp
 
-# Subtract 10 hours from the current time
-past_time = current_time - timedelta(hours=10)
-print(f"Date and time 10 hours ago: {past_time}")
+# Example usage
+if __name__ == "__main__":
+    celsius_value = 25
+    fahrenheit_value = celsius_to_fahrenheit(celsius_value)
+    print(f"{celsius_value}°C is approximately {fahrenheit_value:.2f}°F")
 
-# Calculate the difference between two dates
-another_time = datetime(2024, 1, 1, 12, 0, 0)  # Fixed date and time
-time_difference = another_time - current_time
-print(f"Time difference between {another_time} and now: {time_difference}")
+    fahrenheit_value = 77
+    celsius_value = fahrenheit_to_celsius(fahrenheit_value)
+    print(f"{fahrenheit_value}°F is approximately {celsius_value:.2f}°C")
