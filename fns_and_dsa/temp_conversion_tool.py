@@ -24,7 +24,7 @@ def user_interaction():
     """
     try:
         # Prompt the user for a temperature value
-        temp_input = input("Enter the temperature: ")
+        temp_input = input("Enter the temperature to convert: ")
 
         # Validate if input is numeric
         if not temp_input.replace('.', '', 1).isdigit():
@@ -34,7 +34,7 @@ def user_interaction():
         temperature = float(temp_input)
 
         # Prompt the user for the unit
-        unit = input("Is the temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
+        unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
 
         if unit == 'C':
             # Convert Celsius to Fahrenheit
