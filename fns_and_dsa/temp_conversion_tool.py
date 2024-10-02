@@ -1,49 +1,39 @@
 # temp_conversion_tool.py
 
-# Global conversion factors
-FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
-
-def convert_to_celsius(fahrenheit):
-    """
-    Converts Fahrenheit temperature to Celsius.
-    """
-    celsius = (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
-    return celsius
+# Constants for conversion factors
+FAHRENHEIT_TO_CELSIUS_FACTOR = (5/9)  # Factor to convert Fahrenheit to Celsius
+CELSIUS_TO_FAHRENHEIT_FACTOR = (9/5)  # Factor to convert Celsius to Fahrenheit
+FAHRENHEIT_OFFSET = 32  # Offset used in Fahrenheit to Celsius conversion
 
 def convert_to_fahrenheit(celsius):
     """
-    Converts Celsius temperature to Fahrenheit.
+    Converts Celsius to Fahrenheit.
+    
+    Parameters:
+    celsius (float): Temperature in Celsius.
+
+    Returns:
+    float: Temperature in Fahrenheit.
     """
-    fahrenheit = (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
-    return fahrenheit
+    return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + FAHRENHEIT_OFFSET
 
-def get_user_input():
+def convert_to_celsius(fahrenheit):
     """
-    Prompt user for temperature and unit choice.
+    Converts Fahrenheit to Celsius.
+    
+    Parameters:
+    fahrenheit (float): Temperature in Fahrenheit.
+
+    Returns:
+    float: Temperature in Celsius.
     """
-    try:
-        temp_str = input("Enter a temperature value: ")
-        temperature = float(temp_str)
-        unit = input("Is it in Celsius (C) or Fahrenheit (F)? ").lower()
-        return temperature, unit
-    except ValueError:
-        raise ValueError("Invalid temperature. Please enter a numeric value.")
+    return (fahrenheit - FAHRENHEIT_OFFSET) * FAHRENHEIT_TO_CELSIUS_FACTOR
 
-def main():
-    try:
-        temperature, unit = get_user_input()
-
-        if unit == "c":
-            converted_temp = convert_to_fahrenheit(temperature)
-            print(f"{temperature:.2f}°C is approximately {converted_temp:.2f}°F")
-        elif unit == "f":
-            converted_temp = convert_to_celsius(temperature)
-            print(f"{temperature:.2f}°F is approximately {converted_temp:.2f}°C")
-        else:
-            raise ValueError("Invalid unit. Please enter 'C' or 'F'.")
-    except ValueError as e:
-        print(e)
-
+# Example usage
 if __name__ == "__main__":
-    main()
+    # Example temperature conversions
+    celsius = 100
+    fahrenheit = 212
+    
+    print(f"{celsius}°C is {convert_to_fahrenheit(celsius):.2f}°F")
+    print(f"{fahrenheit}°F is {convert_to_celsius(fahrenheit):.2f}°C")

@@ -1,29 +1,39 @@
 # temp_conversion_tool.py
 
-# Global variables (conversion factors)
-FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
+# Constants for conversion factors
+FAHRENHEIT_TO_CELSIUS_FACTOR = (5/9)  # Factor to convert Fahrenheit to Celsius
+CELSIUS_TO_FAHRENHEIT_FACTOR = (9/5)  # Factor to convert Celsius to Fahrenheit
+FAHRENHEIT_OFFSET = 32  # Offset used in Fahrenheit to Celsius conversion
 
 def convert_to_fahrenheit(celsius):
     """
-    Converts Celsius temperature to Fahrenheit.
+    Converts Celsius to Fahrenheit.
+    
+    Parameters:
+    celsius (float): Temperature in Celsius.
+
+    Returns:
+    float: Temperature in Fahrenheit.
     """
-    fahrenheit = (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
-    return fahrenheit
+    return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + FAHRENHEIT_OFFSET
 
 def convert_to_celsius(fahrenheit):
     """
-    Converts Fahrenheit temperature to Celsius.
+    Converts Fahrenheit to Celsius.
+    
+    Parameters:
+    fahrenheit (float): Temperature in Fahrenheit.
+
+    Returns:
+    float: Temperature in Celsius.
     """
-    celsius = (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
-    return celsius
+    return (fahrenheit - FAHRENHEIT_OFFSET) * FAHRENHEIT_TO_CELSIUS_FACTOR
 
 # Example usage
 if __name__ == "__main__":
-    celsius_value = 25
-    fahrenheit_value = convert_to_fahrenheit(celsius_value)
-    print(f"{celsius_value}°C is approximately {fahrenheit_value:.2f}°F")
-
-    fahrenheit_value = 77
-    celsius_value = convert_to_celsius(fahrenheit_value)
-    print(f"{fahrenheit_value}°F is approximately {celsius_value:.2f}°C")
+    # Example temperature conversions
+    celsius = 100
+    fahrenheit = 212
+    
+    print(f"{celsius}°C is {convert_to_fahrenheit(celsius):.2f}°F")
+    print(f"{fahrenheit}°F is {convert_to_celsius(fahrenheit):.2f}°C")
