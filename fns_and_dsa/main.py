@@ -1,54 +1,40 @@
 # temp_conversion_tool.py
 
-# Global Conversion Factors
-FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
+#Global Conversion Factors
+FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9  # Global Factor to convert Fahrenheit to Celsius
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5  # Global Factor to convert Celsius to Fahrenheit
 FAHRENHEIT_OFFSET = 32  # Offset for Fahrenheit to Celsius conversion
 
 # Function to convert Fahrenheit to Celsius
-def convert_to_celsius(fahrenheit):
-    """
-    Converts Fahrenheit to Celsius.
+def convert_to_celsius(fahrenheit): #Convert Fahrenheit to celcious using the global conversion factor.
+    celsius = (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
+    return celsius
     
-    Parameters:
-    fahrenheit (float): Temperature in Fahrenheit.
-
-    Returns:
-    float: Temperature in Celsius.
-    """
-    return (fahrenheit - FAHRENHEIT_OFFSET) * FAHRENHEIT_TO_CELSIUS_FACTOR
 
 # Function to convert Celsius to Fahrenheit
-def convert_to_fahrenheit(celsius):
-    """
-    Converts Celsius to Fahrenheit.
+def convert_to_fahrenheit(celsius): #Converts Celsius to Fahrenheit using the global conversion factor.
     
-    Parameters:
-    celsius (float): Temperature in Celsius.
+    fahrenheit = (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
+    return fahrenheit
 
-    Returns:
-    float: Temperature in Fahrenheit.
-    """
-    return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + FAHRENHEIT_OFFSET
-
-# Function to prompt user and handle conversion
+# Function to handle user interaction
 def user_interaction():
     """
     Prompts the user for temperature input and converts it based on the specified unit.
     Handles input validation and displays the result.
     """
     try:
-        # Prompt user for temperature
-        temp_input = input("Enter the temperature value: ")
+        # Prompt the user for a temperature value
+        temp_input = input("Enter the temperature: ")
 
-        # Check if input is numeric
+        # Validate if input is numeric
         if not temp_input.replace('.', '', 1).isdigit():
             raise ValueError("Invalid temperature. Please enter a numeric value.")
         
-        # Convert input to a float value
+        # Convert input to float
         temperature = float(temp_input)
 
-        # Prompt user for the unit of temperature
+        # Prompt the user for the unit
         unit = input("Is the temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
 
         if unit == 'C':
@@ -62,12 +48,12 @@ def user_interaction():
             print(f"{temperature}°F is equal to {converted_temp:.2f}°C.")
         
         else:
-            # Raise error if invalid unit is entered
+            # Raise error for invalid unit input
             raise ValueError("Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
 
     except ValueError as e:
         print(e)
 
-# Main script execution
+# Main execution block
 if __name__ == "__main__":
     user_interaction()
