@@ -16,7 +16,7 @@ def safe_divide(numerator, denominator):
         denom = float(denominator)
         
         if denom == 0:
-            return "Error: Division by zero is undefined."
+            return "Error: Cannot divide by zero."
         
         return f"The result is: {num / denom}"
     
