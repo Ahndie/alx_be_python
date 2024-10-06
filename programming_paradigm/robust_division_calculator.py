@@ -21,4 +21,4 @@ def safe_divide(numerator, denominator):
         return f"The result is: {num / denom}"
     
     except ValueError:
-        return "Error: Invalid input. Please enter numeric values."
+        return "Error: Please enter numeric values only."
