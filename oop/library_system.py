@@ -10,7 +10,7 @@ class Book:
         return f"Book: {self.title} by {self.author}"
 
     def __repr__(self):
-        return f"Book(title={self.title}, author={self.author}, year={self.year})"
+        return f"Book(title='{self.title}', author='{self.author}', year={self.year})"
 
 
 class EBook(Book):
@@ -34,14 +34,17 @@ class PrintBook(Book):
 
 class Library:
     def __init__(self):
-        self.books = []
+        self.books = []  # Initialize an empty list to hold books
 
     def add_book(self, book):
+        """Add a book to the library."""
         self.books.append(book)
 
     def remove_book(self, book):
+        """Remove a book from the library."""
         if book in self.books:
             self.books.remove(book)
 
     def list_books(self):
+        """List all books in the library."""
         return [str(book) for book in self.books]
