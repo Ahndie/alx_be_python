@@ -15,3 +15,8 @@ class Book:
 
 # Creating an instance of book
 book = Book('1984', 'George Orwell', 1949)
+
+
+print(book)
+print(repr(book))
+del book
