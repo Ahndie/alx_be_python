@@ -24,12 +24,12 @@ class EBook(Book):
 
 
 class PrintBook(Book):
-    def __init__(self, title, author, year, num_pages):
+    def __init__(self, title, author, year, page_count):
         super().__init__(title, author, year)
-        self.num_pages = num_pages
+        self.page_count = page_count
 
     def __str__(self):
-        return f"{super().__str__()} (PrintBook with {self.num_pages} pages)"
+        return f"{super().__str__()} (PrintBook with {self.page_count} pages)"
 
 
 class Library:
