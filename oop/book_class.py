@@ -1,5 +1,5 @@
 class Book: 
-    def __init__(self, title, author, publication_year):
+    def __init__(self, title, author, year):
         self.title = title
         self.author = author
         self.year = year
@@ -11,4 +11,7 @@ class Book:
     	return f"Book(title={self.title}, author={self.author}, year={self.year})"
 
     def __del__(self):
-        print(f"The book'{self.tit;e}' is deleted.")	
+        print(f"Deleting '{self.title}'.")	
+
+# Creating an instance of book
+book = Book('1984', 'George Orwell', 1949)
