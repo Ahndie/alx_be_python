@@ -2,10 +2,10 @@ class Book:
     def __init__(self, title, author, year):
         self.title = title
         self.author = author
+        self.year = year
 
     def __str__(self):
-        return f"'{self.title}' by {self.author}"
-
+        return f"'{self.title}' by {self.author}, published in {self.year}"
 
 class EBook(Book):
     def __init__(self, title, author, year, file_size):
@@ -13,8 +13,7 @@ class EBook(Book):
         self.file_size = file_size
 
     def __str__(self):
-        return f"'{self.title}' by {self.author} (EBook, {self.file_size} MB)"
-
+        return f"'{self.title}' by {self.author}, published in {self.year} (EBook, {self.file_size} KB)"
 
 class PrintBook(Book):
     def __init__(self, title, author, year, page_count):
@@ -22,10 +21,8 @@ class PrintBook(Book):
         self.page_count = page_count
 
     def __str__(self):
-        return f"'{self.title}' by {self.author} (PrintBook, {self.page_count} pages)"
+        return f"'{self.title}' by {self.author}, published in {self.year} (PrintBook, {self.page_count} pages)"
 
-
-# Composition - Library class
 class Library:
     def __init__(self):
         self.books = []
