@@ -1,4 +1,4 @@
-from library_system import Book, EBook, PrintBook, Library
+# main.py
 
 def main():
     classic_book = Book("Pride and Prejudice", "Jane Austen", 1813)
