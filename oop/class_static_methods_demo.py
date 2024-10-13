@@ -12,19 +12,19 @@ class Calculator:
     @classmethod
     def multiply(cls, a, b):
         """Class method to return the product of two numbers."""
-        # Accessing class attribute
-        print(f"Calculation Type: {cls.calculation_type}")
+        # Adjusting the output format for "calculation type"
+        print(f"Calculation type: {cls.calculation_type}")
         return a * b
 
 # Main function to demonstrate class and static methods
 def main():
     # Using the static method
-    result_add = Calculator.add(10, 20)
-    print(f"Addition (static method): 10 + 20 = {result_add}")
+    result_add = Calculator.add(10, 5)
+    print(f"The sum is: {result_add}")
 
     # Using the class method
-    result_multiply = Calculator.multiply(5, 4)
-    print(f"Multiplication (class method): 5 * 4 = {result_multiply}")
+    result_multiply = Calculator.multiply(10, 5)
+    print(f"The product is: {result_multiply}")
 
 if __name__ == "__main__":
     main()
