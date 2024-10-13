@@ -1,4 +1,4 @@
-#library_system.py
+# library_system.py
 
 class Book:
     def __init__(self, title, author, year):
@@ -14,12 +14,13 @@ class Book:
 
 
 class EBook(Book):
-    def __init__(self, title, author, year, file_format):
+    def __init__(self, title, author, year, file_format, file_size):
         super().__init__(title, author, year)
         self.file_format = file_format
+        self.file_size = file_size
 
     def __str__(self):
-        return f"{super().__str__()} (EBook in {self.file_format} format)"
+        return f"{super().__str__()} (EBook in {self.file_format} format, {self.file_size} MB)"
 
 
 class PrintBook(Book):
@@ -42,4 +43,5 @@ class Library:
         if book in self.books:
             self.books.remove(book)
 
-    def list
+    def list_books(self):
+        return [str(book) for book in self.books]
